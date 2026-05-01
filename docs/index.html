@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stage314 Public Verification</title>
+</head>
+<body>
+
+<h1>Stage314 Public Verification</h1>
+
+<h2>Decision</h2>
+<pre id="decision">Loading...</pre>
+
+<h2>Signature</h2>
+<p>Signature file is available:</p>
+<p><a href="decision.json.sig">decision.json.sig</a></p>
+
+<h2>Verify Command</h2>
+<pre>gpg --verify decision.json.sig decision.json</pre>
+
+<h2>Meaning</h2>
+<p>This page publicly exposes a signed verification decision.</p>
+<p>The final accept decision is explicitly approved and cryptographically signed.</p>
+
+<script>
+fetch('decision.json')
+  .then(r => r.ok ? r.text() : "ERROR: decision.json not found")
+  .then(t => document.getElementById('decision').textContent = t);
+</script>
+
+</body>
+</html>

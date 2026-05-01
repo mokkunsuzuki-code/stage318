@@ -1,0 +1,7 @@
+.venv/
+cosign.key
+__pycache__/
+*.pyc
+.venv/
+.env
+stage317.db
