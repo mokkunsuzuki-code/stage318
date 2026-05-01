@@ -1,41 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <title>REMEDA - Trust Verification API</title>
 <style>
-body { font-family: Arial; margin: 40px; background:#0f172a; color:white; }
-.container { max-width: 800px; margin:auto; }
-h1 { font-size: 40px; }
-.button { padding:15px; background:#22c55e; color:black; text-decoration:none; display:inline-block; margin:10px 0; }
-.card { background:#1e293b; padding:20px; margin:20px 0; border-radius:10px; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: white;
+}
+.container {
+  max-width: 980px;
+  margin: auto;
+  padding: 64px 24px;
+}
+.badge {
+  display: inline-block;
+  background: #22c55e;
+  color: #020617;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin: 24px 0 16px;
+}
+.lead {
+  color: #cbd5e1;
+  font-size: 19px;
+  line-height: 1.8;
+}
+.button {
+  display: inline-block;
+  padding: 15px 22px;
+  margin: 18px 10px 0 0;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #020617;
+  text-decoration: none;
+  font-weight: bold;
+}
+.button.secondary {
+  background: #38bdf8;
+}
+.card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 28px;
+  margin-top: 26px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.price h2 {
+  color: #22c55e;
+}
+.warning {
+  border-color: #f97316;
+}
+pre {
+  background: #020617;
+  color: #bbf7d0;
+  padding: 20px;
+  border-radius: 14px;
+  overflow-x: auto;
+}
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>Stop Trusting. Start Verifying.</h1>
+<span class="badge">Stage318 / Sales Ready</span>
 
-<p>APIs, AI outputs, and software are trusted blindly.<br>
-REMEDA verifies them with cryptographic proof.</p>
+<h1>信頼するのをやめよう。<br>検証を始めよう。</h1>
+
+<p class="lead">
+API、AIの出力、ソフトウェアは、今も多くの場面で盲目的に信頼されています。<br>
+REMEDAは、暗号学的証明によって「本当に信頼できるか」を検証します。
+</p>
 
 <a class="button" href="demo.html">APIを試す</a>
-<a class="button" href="get-api-key.html">APIキーを取得する</a>
+<a class="button secondary" href="get-api-key.html">APIキーを取得する</a>
 
-<div class="card">
-<h2>Problem</h2>
-<p>You cannot prove integrity, identity, or execution.</p>
+<div class="card warning">
+<h2>なぜ今必要か</h2>
+<p class="lead">
+AIの出力、APIレスポンス、ソフトウェア成果物は、簡単に改ざん・偽装・再利用されます。<br>
+検証できないものは、信頼できません。
+</p>
 </div>
 
 <div class="card">
-<h2>Solution</h2>
-<p>REMEDA verifies:</p>
+<h2>問題</h2>
+<p class="lead">
+多くのシステムでは、完全性・実行証明・発行者証明・時間証明を同時に確認できません。
+</p>
+</div>
+
+<div class="card">
+<h2>解決</h2>
+<p class="lead">REMEDAは、次の証拠を組み合わせて検証します。</p>
 <ul>
-<li>Integrity (SHA256)</li>
-<li>Execution (CI)</li>
-<li>Identity (GPG / Sigstore)</li>
-<li>Time (Bitcoin)</li>
+<li>完全性：SHA256 による改ざん検知</li>
+<li>実行証明：CI / GitHub Actions の証拠</li>
+<li>発行者証明：GPG / Sigstore</li>
+<li>時間証明：Bitcoin / OpenTimestamps</li>
 </ul>
+</div>
+
+<div class="card">
+<h2>Proで何が変わるか</h2>
+<p class="lead">
+Freeは基本検証。Proでは APIキー、GPG / Sigstore、検証履歴、高信頼スコアを使い、
+チームや顧客に提出できる証明へ拡張できます。
+</p>
+</div>
+
+<div class="grid">
+  <div class="card price">
+    <h2>Free</h2>
+    <p>基本検証</p>
+    <p>公開デモ</p>
+    <a class="button" href="demo.html">無料で試す</a>
+  </div>
+
+  <div class="card price">
+    <h2>Pro</h2>
+    <p>APIキー</p>
+    <p>GPG / Sigstore</p>
+    <p>検証履歴</p>
+    <a class="button" href="get-api-key.html">APIキーを取得</a>
+  </div>
+
+  <div class="card price">
+    <h2>Enterprise</h2>
+    <p>監査・証明・レポート</p>
+    <p>組織向け運用</p>
+    <a class="button" href="get-api-key.html">相談する</a>
+  </div>
 </div>
 
 <div class="card">
@@ -43,19 +152,13 @@ REMEDA verifies them with cryptographic proof.</p>
 <pre id="demo">Loading...</pre>
 </div>
 
-<div class="card">
-<h2>Pricing</h2>
-<p>Free: Basic verification</p>
-<p>Pro: API key + high-trust verification</p>
-</div>
-
 </div>
 
 <script>
 fetch("health.json")
-.then(r=>r.json())
-.then(d=>{
- document.getElementById("demo").innerText = JSON.stringify(d, null, 2);
+.then(r => r.json())
+.then(d => {
+  document.getElementById("demo").innerText = JSON.stringify(d, null, 2);
 });
 </script>
 
