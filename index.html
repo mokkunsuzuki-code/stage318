@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>REMEDA - Trust Verification API</title>
+<style>
+body { font-family: Arial; margin: 40px; background:#0f172a; color:white; }
+.container { max-width: 800px; margin:auto; }
+h1 { font-size: 40px; }
+.button { padding:15px; background:#22c55e; color:black; text-decoration:none; display:inline-block; margin:10px 0; }
+.card { background:#1e293b; padding:20px; margin:20px 0; border-radius:10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Stop Trusting. Start Verifying.</h1>
+
+<p>APIs, AI outputs, and software are trusted blindly.<br>
+REMEDA verifies them with cryptographic proof.</p>
+
+<a class="button" href="/api/health">Try API</a>
+<a class="button" href="#">Get API Key</a>
+
+<div class="card">
+<h2>Problem</h2>
+<p>You cannot prove integrity, identity, or execution.</p>
+</div>
+
+<div class="card">
+<h2>Solution</h2>
+<p>REMEDA verifies:</p>
+<ul>
+<li>Integrity (SHA256)</li>
+<li>Execution (CI)</li>
+<li>Identity (GPG / Sigstore)</li>
+<li>Time (Bitcoin)</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Live Demo</h2>
+<pre id="demo">Loading...</pre>
+</div>
+
+<div class="card">
+<h2>Pricing</h2>
+<p>Free: Basic verification</p>
+<p>Pro: API key + high-trust verification</p>
+</div>
+
+</div>
+
+<script>
+fetch("/api/health")
+.then(r=>r.json())
+.then(d=>{
+ document.getElementById("demo").innerText = JSON.stringify(d, null, 2);
+});
+</script>
+
+</body>
+</html>
