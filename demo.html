@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>REMEDA API Demo</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: white;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 60px 24px;
+}
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #020617;
+  font-weight: bold;
+}
+h1 {
+  font-size: 44px;
+  margin: 24px 0 12px;
+}
+.lead {
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 28px;
+  margin-top: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.metric {
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 18px;
+}
+.metric strong {
+  display: block;
+  font-size: 26px;
+  color: #22c55e;
+}
+pre {
+  background: #020617;
+  color: #bbf7d0;
+  padding: 22px;
+  border-radius: 14px;
+  overflow-x: auto;
+  font-size: 14px;
+}
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 20px;
+  background: #22c55e;
+  color: #020617;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<span class="badge">LIVE API DEMO</span>
+
+<h1>REMEDA Verification API</h1>
+
+<p class="lead">
+このデモは、REMEDA が API・AI出力・ソフトウェアの信頼性を
+どのように検証するかを示す販売用デモページです。
+</p>
+
+<div class="grid">
+  <div class="metric">
+    <strong>318</strong>
+    Stage
+  </div>
+  <div class="metric">
+    <strong>ON</strong>
+    Monetization
+  </div>
+  <div class="metric">
+    <strong>3</strong>
+    Plans
+  </div>
+</div>
+
+<div class="card">
+  <h2>検証結果</h2>
+  <p class="lead">
+    Stage318 は REMEDA を「検証技術」から「販売可能な製品」に変換します。
+  </p>
+
+<pre>{
+  "ok": true,
+  "service": "remeda-sales-lp",
+  "stage": 318,
+  "monetization": true,
+  "plans": ["free", "pro", "enterprise"],
+  "message": "REMEDA is now positioned as a sales-ready verification product."
+}</pre>
+</div>
+
+<div class="card">
+  <h2>何を証明するか</h2>
+  <ul>
+    <li>完全性：SHA256 による改ざん検知</li>
+    <li>実行証明：CI / GitHub Actions の証拠</li>
+    <li>発行者証明：GPG / Sigstore</li>
+    <li>時間証明：Bitcoin / OpenTimestamps</li>
+  </ul>
+</div>
+
+<a class="button" href="index.html">← LPに戻る</a>
+
+</div>
+</body>
+</html>
