@@ -52,7 +52,7 @@ REMEDA verifies them with cryptographic proof.</p>
 </div>
 
 <script>
-fetch("/api/health")
+fetch("health.json")
 .then(r=>r.json())
 .then(d=>{
  document.getElementById("demo").innerText = JSON.stringify(d, null, 2);
