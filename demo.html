@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>REMEDA API Demo</title>
+<title>AI Vulnerability Proof Demo</title>
 <style>
 body {
   margin: 0;
@@ -11,125 +11,84 @@ body {
   color: white;
 }
 .container {
-  max-width: 960px;
+  max-width: 900px;
   margin: auto;
   padding: 60px 24px;
 }
 .badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
   background: #22c55e;
   color: #020617;
+  padding: 8px 14px;
+  border-radius: 999px;
   font-weight: bold;
 }
-h1 {
-  font-size: 44px;
-  margin: 24px 0 12px;
-}
-.lead {
-  color: #cbd5e1;
-  font-size: 18px;
-  line-height: 1.7;
-}
+h1 { font-size: 40px; }
 .card {
-  background: rgba(15, 23, 42, 0.9);
+  background: #0f172a;
   border: 1px solid #334155;
   border-radius: 18px;
-  padding: 28px;
-  margin-top: 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  padding: 24px;
   margin-top: 24px;
-}
-.metric {
-  background: #020617;
-  border: 1px solid #334155;
-  border-radius: 14px;
-  padding: 18px;
-}
-.metric strong {
-  display: block;
-  font-size: 26px;
-  color: #22c55e;
 }
 pre {
   background: #020617;
   color: #bbf7d0;
-  padding: 22px;
-  border-radius: 14px;
-  overflow-x: auto;
-  font-size: 14px;
+  padding: 18px;
+  border-radius: 12px;
 }
 .button {
   display: inline-block;
-  margin-top: 24px;
+  margin-top: 20px;
   padding: 14px 20px;
   background: #22c55e;
   color: #020617;
   text-decoration: none;
+  border-radius: 10px;
   font-weight: bold;
-  border-radius: 12px;
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<span class="badge">LIVE API DEMO</span>
+<span class="badge">LIVE DEMO</span>
 
-<h1>AI Vulnerability Proof Demo</h1>
+<h1>AI脆弱性 → 証明URLへ</h1>
 
-<p class="lead">
-このデモは、REMEDA が API・AI出力・ソフトウェアの信頼性を
-どのように検証するかを示す販売用デモページです。
+<div class="card">
+<h2>入力（AI検出結果）</h2>
+<pre>
+SQL Injection detected in login API
+confidence: 0.92
+</pre>
+</div>
+
+<div class="card">
+<h2>検証</h2>
+<pre>
+Integrity: OK
+Execution: Verified (CI)
+Identity: Verified (GPG/Sigstore)
+Time: Timestamped (Bitcoin)
+</pre>
+</div>
+
+<div class="card">
+<h2>結果（証明URL）</h2>
+<pre>
+https://remeda.io/proof/abc123
+</pre>
+</div>
+
+<div class="card">
+<h2>何が変わるか</h2>
+<p>
+AI結果をそのまま提出するのではなく、<br>
+検証された証明として提出できるようになります。
 </p>
-
-<div class="grid">
-  <div class="metric">
-    <strong>318</strong>
-    Stage
-  </div>
-  <div class="metric">
-    <strong>ON</strong>
-    Monetization
-  </div>
-  <div class="metric">
-    <strong>3</strong>
-    Plans
-  </div>
 </div>
 
-<div class="card">
-  <h2>検証結果</h2>
-  <p class="lead">
-    AI結果をそのまま信じるのではなく、検証して外部提出できる証明に変換します。
-  </p>
-
-<pre>{
-  "ok": true,
-  "service": "remeda-sales-lp",
-  "stage": 318,
-  "monetization": true,
-  "plans": ["free", "pro", "enterprise"],
-  "message": "AI vulnerability result converted into verifiable proof URL."
-}</pre>
-</div>
-
-<div class="card">
-  <h2>何を証明するか</h2>
-  <ul>
-    <li>完全性：SHA256 による改ざん検知</li>
-    <li>実行証明：CI / GitHub Actions の証拠</li>
-    <li>発行者証明：GPG / Sigstore</li>
-    <li>時間証明：Bitcoin / OpenTimestamps</li>
-  </ul>
-</div>
-
+<a class="button" href="get-api-key.html">証明URLを発行する</a>
 <a class="button" href="index.html">← LPに戻る</a>
 
 </div>
