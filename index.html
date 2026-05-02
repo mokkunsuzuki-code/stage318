@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>REMEDA - Trust Verification API</title>
+<title>REMEDA - AI Verification</title>
 <style>
 body {
   margin: 0;
@@ -24,19 +24,19 @@ body {
   font-weight: bold;
 }
 h1 {
-  font-size: 48px;
-  line-height: 1.15;
+  font-size: 46px;
+  line-height: 1.2;
   margin: 24px 0 16px;
 }
 .lead {
   color: #cbd5e1;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .button {
   display: inline-block;
-  padding: 15px 22px;
-  margin: 18px 10px 0 0;
+  padding: 16px 22px;
+  margin: 20px 10px 0 0;
   border-radius: 12px;
   background: #22c55e;
   color: #020617;
@@ -52,115 +52,90 @@ h1 {
   border-radius: 18px;
   padding: 28px;
   margin-top: 26px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+}
+.warning {
+  border-color: #f97316;
 }
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
-.price h2 {
-  color: #22c55e;
-}
-.warning {
-  border-color: #f97316;
-}
 pre {
   background: #020617;
   color: #bbf7d0;
   padding: 20px;
   border-radius: 14px;
-  overflow-x: auto;
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<span class="badge">Stage318 / Sales Ready</span>
+<span class="badge">AI Verification Tool</span>
 
-<h1>信頼するのをやめよう。<br>検証を始めよう。</h1>
+<h1>AIが見つけた結果、本当に正しいですか？</h1>
 
 <p class="lead">
-API、AIの出力、ソフトウェアは、今も多くの場面で盲目的に信頼されています。<br>
-REMEDAは、暗号学的証明によって「本当に信頼できるか」を検証します。
+REMEDAは、AIが出した結果や脆弱性を<br>
+「証明付き」で検証するツールです。
 </p>
 
-<a class="button" href="demo.html">APIを試す</a>
-<a class="button secondary" href="get-api-key.html">APIキーを取得する</a>
+<a class="button" href="demo.html">無料で検証してみる</a>
+<a class="button secondary" href="get-api-key.html">証明URLを発行する</a>
 
 <div class="card warning">
-<h2>なぜ今必要か</h2>
+<h2>間違っていたらどうなるか？</h2>
 <p class="lead">
-AIの出力、APIレスポンス、ソフトウェア成果物は、簡単に改ざん・偽装・再利用されます。<br>
-検証できないものは、信頼できません。
-</p>
-</div>
-
-<div class="card">
-<h2>問題</h2>
-<p class="lead">
-多くのシステムでは、完全性・実行証明・発行者証明・時間証明を同時に確認できません。
+AIの誤判定は、信用失墜・対応遅延・責任問題につながります。<br>
+検証されていない結果は、リスクそのものです。
 </p>
 </div>
 
 <div class="card">
 <h2>解決</h2>
-<p class="lead">REMEDAは、次の証拠を組み合わせて検証します。</p>
+<p class="lead">
+REMEDAは以下を組み合わせて検証します：
+</p>
 <ul>
-<li>完全性：SHA256 による改ざん検知</li>
-<li>実行証明：CI / GitHub Actions の証拠</li>
-<li>発行者証明：GPG / Sigstore</li>
-<li>時間証明：Bitcoin / OpenTimestamps</li>
+<li>完全性（SHA256）</li>
+<li>実行証明（CI / GitHub Actions）</li>
+<li>発行者証明（GPG / Sigstore）</li>
+<li>時間証明（Bitcoin）</li>
 </ul>
 </div>
 
 <div class="card">
-<h2>Proで何が変わるか</h2>
-<p class="lead">
-Freeは基本検証。Proでは APIキー、GPG / Sigstore、検証履歴、高信頼スコアを使い、
-チームや顧客に提出できる証明へ拡張できます。
-</p>
+<h2>Before / After</h2>
+<pre>
+Before:
+AI結果 → 信じるしかない
+
+After:
+AI結果 → 検証 → 証明URL → 提出可能
+</pre>
 </div>
 
 <div class="grid">
-  <div class="card price">
+  <div class="card">
     <h2>Free</h2>
-    <p>基本検証</p>
-    <p>公開デモ</p>
-    <a class="button" href="demo.html">無料で試す</a>
+    <p>簡易検証（社内確認用）</p>
+    <a class="button" href="demo.html">試す</a>
   </div>
 
-  <div class="card price">
+  <div class="card">
     <h2>Pro</h2>
-    <p>APIキー</p>
-    <p>GPG / Sigstore</p>
-    <p>検証履歴</p>
-    <a class="button" href="get-api-key.html">APIキーを取得</a>
+    <p>証明URL発行（外部提出可能）</p>
+    <a class="button" href="get-api-key.html">APIキー取得</a>
   </div>
 
-  <div class="card price">
+  <div class="card">
     <h2>Enterprise</h2>
     <p>監査・証明・レポート</p>
-    <p>組織向け運用</p>
-    <a class="button" href="mailto:mokkun.suzuki@gmail.com?subject=REMEDA Enterprise Inquiry">相談する</a>
+    <a class="button" href="mailto:mokkun.suzuki@gmail.com">相談する</a>
   </div>
 </div>
 
-<div class="card">
-<h2>Live Demo</h2>
-<pre id="demo">Loading...</pre>
 </div>
-
-</div>
-
-<script>
-fetch("health.json")
-.then(r => r.json())
-.then(d => {
-  document.getElementById("demo").innerText = JSON.stringify(d, null, 2);
-});
-</script>
-
 </body>
 </html>
